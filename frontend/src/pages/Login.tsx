@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Field, Input, Label, Button } from "@headlessui/react";
 import clsx from "clsx";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import AuthContext from "../context/AuthContext";
@@ -30,14 +30,8 @@ const Login: React.FC = () => {
         localStorage.setItem("token", token);
         localStorage.setItem("user", userFullname);
         setAuth({ user: userFullname, token });
-        <Navigate to="/" />;
         navigate("/");
-        setTimeout(() => {
-          // navigate("/");
-          <Navigate to="/" />;
-        }, 1000);
       } else {
-        // Handle unsuccessful login (e.g., show an error message)
         console.log("Login failed:", response.data.error);
       }
     } catch (error: any) {
