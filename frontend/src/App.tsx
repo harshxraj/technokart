@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={token ? <HomePage /> : <Navigate to="/login" />} />
         <Route path="/register" element={token ? <Navigate to="/" /> : <Register />} />
         <Route path="/login" element={token ? <Navigate to="/" /> : <Login />} />
       </Routes>
