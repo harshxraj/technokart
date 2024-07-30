@@ -1,16 +1,18 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import HomePage from "./pages/Homepage";
 
 function App() {
+  const token = localStorage.getItem("token");
+
   return (
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={token ? <Navigate to="/" /> : <Register />} />
+        <Route path="/login" element={token ? <Navigate to="/" /> : <Login />} />
       </Routes>
     </>
   );
