@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Field, Input, Label, Button } from "@headlessui/react";
 import clsx from "clsx";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import AuthContext from "../context/AuthContext";
@@ -10,7 +10,7 @@ const Login: React.FC = () => {
   const { setAuth } = useContext(AuthContext);
   const [email, setEmail] = useState<string>("test@gmail.com");
   const [password, setPassword] = useState<string>("123456");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault();
