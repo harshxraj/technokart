@@ -15,10 +15,13 @@ const Login: React.FC = () => {
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:9000/auth/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://1ovnb6t2z5.execute-api.ap-south-1.amazonaws.com/dev/auth/login",
+        {
+          email,
+          password,
+        }
+      );
 
       if (response.status === 200) {
         toast.success("Login successful!");

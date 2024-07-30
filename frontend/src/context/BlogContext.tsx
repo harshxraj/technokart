@@ -33,7 +33,7 @@ export const BlogProvider = ({ children }: BlogProviderProps) => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch("http://localhost:9000/blog");
+      const response = await fetch("https://1ovnb6t2z5.execute-api.ap-south-1.amazonaws.com/dev//blog");
       if (response.ok) {
         const data = await response.json();
         setBlogs(data.blogs);
@@ -47,7 +47,7 @@ export const BlogProvider = ({ children }: BlogProviderProps) => {
 
   const addBlog = async (blog: Blog) => {
     try {
-      const response = await fetch("http://localhost:9000/blog", {
+      const response = await fetch("https://1ovnb6t2z5.execute-api.ap-south-1.amazonaws.com/dev//blog", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

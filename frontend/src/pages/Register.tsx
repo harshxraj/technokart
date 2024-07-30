@@ -14,11 +14,14 @@ const Register: React.FC = () => {
   const handleRegister = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:9000/auth/register", {
-        fullname,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://1ovnb6t2z5.execute-api.ap-south-1.amazonaws.com/dev/auth/register",
+        {
+          fullname,
+          email,
+          password,
+        }
+      );
 
       if (response.status === 201) {
         // Registration successful, navigate to login page or show success message
