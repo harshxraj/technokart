@@ -30,6 +30,7 @@ const Login: React.FC = () => {
         localStorage.setItem("token", token);
         localStorage.setItem("user", userFullname);
         setAuth({ user: userFullname, token });
+        <Navigate to="/" />;
         setTimeout(() => {
           // navigate("/");
           <Navigate to="/" />;
