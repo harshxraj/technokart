@@ -30,6 +30,7 @@ const Login: React.FC = () => {
         localStorage.setItem("token", token);
         localStorage.setItem("user", userFullname);
         setAuth({ user: userFullname, token });
+
         navigate("/");
       } else {
         console.log("Login failed:", response.data.error);
